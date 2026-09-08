@@ -31,10 +31,10 @@ Finds A, G, C, U and T nucleobase-containing molecules in the CCD and produces a
 
 **Arguments:**
 
-| Flag           | Argument          | Default                   |
-|----------------|-------------------|---------------------------|
-| -d / --data    | Data directory    | ~/protein_nucleobase_data |
-| -w / --workers | Number of workers | Number of CPU cores       |
+| Flag               | Description       | Default                   |
+|--------------------|-------------------|---------------------------|
+| `-d`/ `--data`     | Data directory    | ~/protein_nucleobase_data |
+| `-w` / `--workers` | Number of workers | Number of CPU cores       |
 
 
 #### [2_find_pdb_ids_with_ligands_or_nucleic_acid.py](scripts/pdb/2_find_pdb_ids_with_ligands_or_nucleic_acid.py)
@@ -42,51 +42,51 @@ Searches RCSB PDB API for structures of proteins in complex with either any smal
 
 **Arguments:**
 
-| Flag           | Argument          | Default                   |
-|----------------|-------------------|---------------------------|
-| -d / --data    | Data directory    | ~/protein_nucleobase_data |
-| -w / --workers | Number of workers | Number of CPU cores       |
+| Flag               | Description       | Default                   |
+|--------------------|-------------------|---------------------------|
+| `-d`/ `--data`     | Data directory    | ~/protein_nucleobase_data |
+| `-w` / `--workers` | Number of workers | Number of CPU cores       |
 
 #### [3_download_updated_mmcif_files.py](scripts/pdb/3_download_updated_mmcif_files.py)
 Downloads the Updated mmCIF files from PDBe for the PDB IDs from the previous step.
 
 **Arguments:**
 
-| Flag           | Argument          | Default                   |
-|----------------|-------------------|---------------------------|
-| -d / --data    | Data directory    | ~/protein_nucleobase_data |
-| -w / --workers | Number of workers | Number of CPU cores       |
+| Flag               | Description       | Default                   |
+|--------------------|-------------------|---------------------------|
+| `-d`/ `--data`     | Data directory    | ~/protein_nucleobase_data |
+| `-w` / `--workers` | Number of workers | Number of CPU cores       |
 
 #### [4_protonate_mmcif_files.py](scripts/pdb/4_protonate_mmcif_files.py)
 Protonates the structures from the previous step using ChimeraX.
 
 **Arguments:**
 
-| Flag            | Argument                    | Default                                    |
-|-----------------|-----------------------------|--------------------------------------------|
-| -d / --data     | Data directory              | ~/protein_nucleobase_data                  |
-| -w / --workers  | Number of workers           | Number of CPU cores                        |
-| -c / --chimerax | Path of ChimeraX executable | OS-dependent default installation location |
+| Flag                | Description                 | Default                                    |
+|---------------------|-----------------------------|--------------------------------------------|
+| `-d`/ `--data`      | Data directory              | ~/protein_nucleobase_data                  |
+| `-w` / `--workers`  | Number of workers           | Number of CPU cores                        |
+| `-c` / `--chimerax` | Path of ChimeraX executable | OS-dependent default installation location |
 
 #### [5_calculate_hydrogen_bonds.py](scripts/pdb/5_calculate_hydrogen_bonds.py)
 Calculates hydrogen bonds between nucleobases and side chain functional groups in the protonated structures from the previous step.
 
 **Arguments:**
 
-| Flag           | Argument          | Default                   |
-|----------------|-------------------|---------------------------|
-| -d / --data    | Data directory    | ~/protein_nucleobase_data |
-| -w / --workers | Number of workers | Number of CPU cores       |
+| Flag               | Description       | Default                   |
+|--------------------|-------------------|---------------------------|
+| `-d`/ `--data`     | Data directory    | ~/protein_nucleobase_data |
+| `-w` / `--workers` | Number of workers | Number of CPU cores       |
 
 #### [6_build_pdb_pair_dataset.py](scripts/pdb/6_build_pdb_pair_dataset.py)
 Composes a dataset of bidentate and bifurcated hydrogen-bonded pair occurrences in the PDB based on the hydrogen bonds from the previous step.
 
 **Arguments:**
 
-| Flag           | Argument          | Default                   |
-|----------------|-------------------|---------------------------|
-| -d / --data    | Data directory    | ~/protein_nucleobase_data |
-| -w / --workers | Number of workers | Number of CPU cores       |
+| Flag               | Description       | Default                   |
+|--------------------|-------------------|---------------------------|
+| `-d`/ `--data`     | Data directory    | ~/protein_nucleobase_data |
+| `-w` / `--workers` | Number of workers | Number of CPU cores       |
 
 ### Package [qc](scripts/qc) - Quantum-chemical calculations
 
@@ -97,102 +97,114 @@ Performs geometry optimization using ORCA.
 
 **Arguments:**
 
-| Flag            | Argument                 | Default                |
-|-----------------|--------------------------|------------------------|
-| -i / --input    | Input XYZ file path      |                        |
-| -c / --charge   | Charge                   | Inferred from filename |
-| -o / --output   | Optimized XYZ file path  |                        |
-| -t / --tempdir  | Temporary work directory | OS-dependent           |
-| -w / --workers  | Number of workers        | Number of CPU cores    |
-| -m / --memory   | Memory per worker        |                        |
+| Flag               | Description              | Default                |
+|--------------------|--------------------------|------------------------|
+| `-i` / `--input`   | Input XYZ file path      |                        |
+| `-c` / `--charge`  | Charge                   | Inferred from filename |
+| `-o` / `--output`  | Optimized XYZ file path  |                        |
+| `-t` / `--tempdir` | Temporary work directory | OS-dependent           |
+| `-w` / `--workers` | Number of workers        | Number of CPU cores    |
+| `-m` / `--memory`  | Memory per worker        |                        |
 
 #### [2_calculate_gradients.py](scripts/qc/2_calculate_gradients.py)
 Performs analytical gradient analysis using ORCA.
 
 **Arguments:**
 
-| Flag            | Argument                 | Default                |
-|-----------------|--------------------------|------------------------|
-| -i / --input    | Input XYZ file path      |                        |
-| -c / --charge   | Charge                   | Inferred from filename |
-| -o / --output   | ORCA output file path    |                        |
-| -t / --tempdir  | Temporary work directory | OS-dependent           |
-| -w / --workers  | Number of workers        | Number of CPU cores    |
-| -m / --memory   | Memory per worker        |                        |
+| Flag               | Description              | Default                |
+|--------------------|--------------------------|------------------------|
+| `-i` / `--input`   | Input XYZ file path      |                        |
+| `-c` / `--charge`  | Charge                   | Inferred from filename |
+| `-o` / `--output`  | ORCA output file path    |                        |
+| `-t` / `--tempdir` | Temporary work directory | OS-dependent           |
+| `-w` / `--workers` | Number of workers        | Number of CPU cores    |
+| `-m` / `--memory`  | Memory per worker        |                        |
 
 #### [3_calculate_frequencies.py](scripts/qc/3_calculate_frequencies.py)
 Performs harmonic vibrational frequency analysis using ORCA.
 
 **Arguments:**
 
-| Flag            | Argument                 | Default                |
-|-----------------|--------------------------|------------------------|
-| -i / --input    | Input XYZ file path      |                        |
-| -c / --charge   | Charge                   | Inferred from filename |
-| -o / --output   | ORCA output file path    |                        |
-| -t / --tempdir  | Temporary work directory | OS-dependent           |
-| -w / --workers  | Number of workers        | Number of CPU cores    |
-| -m / --memory   | Memory per worker        |                        |
+| Flag               | Description              | Default                |
+|--------------------|--------------------------|------------------------|
+| `-i` / `--input`   | Input XYZ file path      |                        |
+| `-c` / `--charge`  | Charge                   | Inferred from filename |
+| `-o` / `--output`  | ORCA output file path    |                        |
+| `-t` / `--tempdir` | Temporary work directory | OS-dependent           |
+| `-w` / `--workers` | Number of workers        | Number of CPU cores    |
+| `-m` / `--memory`  | Memory per worker        |                        |
 
 #### [4_get_plane_angles.py](scripts/qc/4_get_plane_angles.py)
 Calculates the buckle and propeller angles for a nucleobase-sidechain dimer.
 
 **Arguments:**
 
-| Flag            | Argument                 | Default                |
-|-----------------|--------------------------|------------------------|
-| -i / --input    | Input XYZ file path      |                        |
-| -c / --charge   | Charge                   | Inferred from filename |
+| Flag              | Description              | Default                |
+|-------------------|--------------------------|------------------------|
+| `-i` / `--input`  | Input XYZ file path      |                        |
+| `-c` / `--charge` | Charge                   | Inferred from filename |
 
 #### [5_calculate_ccsd_t_cbs.py](scripts/qc/5_calculate_ccsd_t_cbs.py)
 Calculates interaction energy at the extrapolated CCSD(T)/CBS limit using PySCF.
 
 **Arguments:**
 
-| Flag            | Argument                                    | Default                |
-|-----------------|---------------------------------------------|------------------------|
-| -i / --input    | Input XYZ file path                         |                        |
-| -c / --charge   | Charge                                      | Inferred from filename |
-| -o / --output   | Output file path with the energy in Hartree |                        |
+| Flag              | Description                                 | Default                |
+|-------------------|---------------------------------------------|------------------------|
+| `-i` / `--input`  | Input XYZ file path                         |                        |
+| `-c` / `--charge` | Charge                                      | Inferred from filename |
+| `-o` / `--output` | Output file path with the energy in Hartree |                        |
 
 #### [6_calculate_sapt_gold.py](scripts/qc/6_calculate_sapt_gold.py)
 Calculates SAPT "gold standard" energy components using Psi4.
 
 **Arguments:**
 
-| Flag            | Argument              | Default                |
-|-----------------|-----------------------|------------------------|
-| -i / --input    | Input XYZ file path   |                        |
-| -c / --charge   | Charge                | Inferred from filename |
-| -o / --output   | Psi4 output file path |                        |
-| -w / --workers  | Number of workers     | Number of CPU cores    |
-| -m / --memory   | Total memory          |                        |
+| Flag               | Description           | Default                |
+|--------------------|-----------------------|------------------------|
+| `-i` / `--input`   | Input XYZ file path   |                        |
+| `-c` / `--charge`  | Charge                | Inferred from filename |
+| `-o` / `--output`  | Psi4 output file path |                        |
+| `-w` / `--workers` | Number of workers     | Number of CPU cores    |
+| `-m` / `--memory`  | Total memory          |                        |
 
 #### [7_calculate_sapt_silver.py](scripts/qc/7_calculate_sapt_silver.py)
 Calculates SAPT "silver standard" energy components using Psi4.
 
 **Arguments:**
 
-| Flag            | Argument              | Default                |
-|-----------------|-----------------------|------------------------|
-| -i / --input    | Input XYZ file path   |                        |
-| -c / --charge   | Charge                | Inferred from filename |
-| -o / --output   | Psi4 output file path |                        |
-| -w / --workers  | Number of workers     | Number of CPU cores    |
-| -m / --memory   | Total memory          |                        |
+| Flag               | Description           | Default                |
+|--------------------|-----------------------|------------------------|
+| `-i` / `--input`   | Input XYZ file path   |                        |
+| `-c` / `--charge`  | Charge                | Inferred from filename |
+| `-o` / `--output`  | Psi4 output file path |                        |
+| `-w` / `--workers` | Number of workers     | Number of CPU cores    |
+| `-m` / `--memory`  | Total memory          |                        |
 
 ## Dependencies
 
 [Biotite](https://github.com/biotite-dev/biotite/)
+
 [Dacite](https://github.com/konradhalas/dacite)
+
 [More Itertools](https://github.com/more-itertools/more-itertools)
+
 [numpy](https://github.com/numpy/numpy)
+
 [OPI](https://github.com/faccts/opi)
+
 [PDBe Arpeggio](https://github.com/PDBeurope/arpeggio)
+
 [psi4](https://github.com/psi4/psi4/)
+
 [pydash](https://github.com/dgilland/pydash)
+
 [pySCF](https://github.com/pyscf/pyscf)
+
 [RDKit](https://github.com/rdkit/rdkit/)
+
 [Requests](https://github.com/psf/requests)
+
 [SymPy](https://github.com/sympy/sympy)
+
 [tqdm](https://github.com/tqdm/tqdm)
