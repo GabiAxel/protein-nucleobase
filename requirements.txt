@@ -1,0 +1,13 @@
+biotite
+dacite
+more_itertools
+numpy
+orca-pi
+pdbe-arpeggio
+psi4
+pydash
+pyscf
+rdkit
+requests
+sympy
+tqdm
