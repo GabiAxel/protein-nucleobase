@@ -183,28 +183,16 @@ Calculates SAPT "silver standard" energy components using Psi4.
 
 ## Dependencies
 
-[Biotite](https://github.com/biotite-dev/biotite/)
-
-[Dacite](https://github.com/konradhalas/dacite)
-
-[More Itertools](https://github.com/more-itertools/more-itertools)
-
-[numpy](https://github.com/numpy/numpy)
-
-[OPI](https://github.com/faccts/opi)
-
-[PDBe Arpeggio](https://github.com/PDBeurope/arpeggio)
-
-[psi4](https://github.com/psi4/psi4/)
-
-[pydash](https://github.com/dgilland/pydash)
-
-[pySCF](https://github.com/pyscf/pyscf)
-
-[RDKit](https://github.com/rdkit/rdkit/)
-
-[Requests](https://github.com/psf/requests)
-
-[SymPy](https://github.com/sympy/sympy)
-
-[tqdm](https://github.com/tqdm/tqdm)
+- [Biotite](https://github.com/biotite-dev/biotite/)
+- [Dacite](https://github.com/konradhalas/dacite)
+- [More Itertools](https://github.com/more-itertools/more-itertools)
+- [numpy](https://github.com/numpy/numpy)
+- [OPI](https://github.com/faccts/opi)
+- [PDBe Arpeggio](https://github.com/PDBeurope/arpeggio)
+- [psi4](https://github.com/psi4/psi4/)
+- [pydash](https://github.com/dgilland/pydash)
+- [pySCF](https://github.com/pyscf/pyscf)
+- [RDKit](https://github.com/rdkit/rdkit/)
+- [Requests](https://github.com/psf/requests)
+- [SymPy](https://github.com/sympy/sympy)
+- [tqdm](https://github.com/tqdm/tqdm)
