@@ -24,7 +24,7 @@ python 1_build_ligand_dataset.py
 
 ### Package [pdb](scripts/pdb) - PDB survey of nucleobase-side chain occurrences
 
-⚠️ The scripts in this package rely on ordered execution with the same data directory (-d/--data flag).
+⚠️ The scripts in this package rely on ordered execution with the same data directory (`-d` / `--data` flag).
 
 #### [1_build_ligand_dataset.py](scripts/pdb/1_build_ligand_dataset.py)
 Finds A, G, C, U and T nucleobase-containing molecules in the CCD and produces a YAML file with molecule-fragment-atom mapping nested dictionary.
@@ -90,7 +90,8 @@ Composes a dataset of bidentate and bifurcated hydrogen-bonded pair occurrences 
 
 ### Package [qc](scripts/qc) - Quantum-chemical calculations
 
-Each script in this package contains a minimal "__main__" block that bridges the CLI usage to a main function. The functions can also be invoked in a any pipeline. 
+🔸 Each script in this package contains a minimal "__main__" block that bridges the CLI usage to a main function, which operates on a single XYZ file. 
+The functions can also be invoked in a any pipeline, for example in a loop over multiple XYZ files. 
 
 #### [1_optimize_geometry.py](scripts/qc/1_optimize_geometry.py)
 Performs geometry optimization using ORCA.
