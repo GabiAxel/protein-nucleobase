@@ -1,4 +1,4 @@
-Python scripts for producing the data in
+Python scripts for producing the data in "From Quantum-Chemical Energy Profiles of Nucleobase-Side Chain Pairs to Angular Preferences in Biological Complexes"
 
 The script functionalities and arguments are detailed below. Arguments can be passed with either short or long flags.
 
